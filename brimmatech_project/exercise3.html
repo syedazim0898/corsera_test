@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Crescent Hostel</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" />
+
+
+  <link rel="stylesheet" href="style.css">
+
+	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+	<style>
+			.container {
+				padding:20px;
+				width:600px;
+				font-family:arial;
+
+			}
+			img {
+				height:150px;
+				width:150px;
+				padding:20px;
+				border-radius:60%;
+			}
+
+	</style>
+
+</head>
+<body>
+	<nav>
+		<label class="logo">
+			<img style=""src="images\logo2.png" alt="logo">
+			Crescent Hostel
+		</label>
+		<ul>
+			<li><a  href="index.html">Home</a></li>
+			<li><a  href="exercise2.html">About us</a></li>
+			<li><a class="active" href="exercise3.html">booking</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Feedback</a></li>
+		</ul>
+	</nav>
+
+	<!-- start -->
+	<div class="container "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+
+			 <div>
+				 <div class="page-header text-center   ">
+						 <h2>BOOK YOUR ROOM</h2>
+				 </div>
+				 <div class="text-center">
+					 <img src="images\PPROFILEPIC.jpg" alt="logo">
+				 </div>
+
+
+
+				<form class="form-horizontal">
+
+					<div class="form-group">
+						<label class="col-md-5 control-label">FIRST NAME :</label>
+							<div class="col-md-5">
+						<input   type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-5 control-label">SECOND NAME :</label>
+							<div class="col-md-5">
+						<input   type="text" class="form-control">
+						</div>
+					</div>
+
+
+				<div class="form-group">
+						<label class="col-md-5 control-label">RRN :</label>
+						<div class="col-md-5">
+						 <input type="number" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-5 control-label">EMAIL:</label>
+						<div class="col-md-5">
+					<input   type="email" class="form-control">
+					</div>
+				</div>
+
+
+				<div class=" text-center   ">
+						 <h3>BOOKING DATES</h3>
+				</div>
+
+
+			<div class="row">
+
+				<div class="form-group">
+						<label class="col-md-5 control-label">FROM :</label>
+						<div class="col-md-5">
+						 <input type="text" id="startdate" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+						<label class="col-md-5 control-label">TO :</label>
+						<div class="col-md-5">
+						 <input type="text" id="enddate" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+						<label class="col-md-5 control-label">NUMBER OF DAYS</label>
+						<div class="col-md-5">
+						 <input type="text" id="days"class="form-control">
+					</div>
+				</div>
+
+			</div>
+
+				<div class="col-md-4 col-md-offset-5">
+					 <button class="btn btn-primary">SUBMIT</button>
+				 </div>
+
+				</form>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+<br>
+<br>
+
+
+<script>
+$(document).ready(function() {
+
+$( "#startdate,#enddate" ).datepicker({
+changeMonth: true,
+changeYear: true,
+firstDay: 1,
+dateFormat: 'dd/mm/yy',
+})
+
+$( "#startdate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+$( "#enddate" ).datepicker({ dateFormat: 'dd-mm-yy' });
+
+$('#enddate').change(function() {
+var start = $('#startdate').datepicker('getDate');
+var end   = $('#enddate').datepicker('getDate');
+
+if (start<end) {
+var days   = (end - start)/1000/60/60/24;
+$('#days').val(days);
+}
+else {
+alert ("You cant book rooms for your past");
+$('#startdate').val("");
+$('#enddate').val("");
+$('#days').val("");
+}
+}); //end change function
+}); //end ready
+</script>
+
+
+
+	<!-- end -->
+
+	<footer class="page-footer font-large special-color-dark pt-4">
+
+<div class="container">
+
+	<ul class="list-unstyled list-inline text-center">
+		<li class="list-inline-item">
+			<a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/kba.menshostel">
+				<i class="fab fa-facebook-f fa-4x"> </i>
+			</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn-floating btn-tw mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology">
+				<i class="fab fa-twitter fa-4x"> </i>
+			</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn-floating btn-gplus mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology" >
+
+				<i class="fab fa-google-plus-g fa-4x"> </i>
+			</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology">
+				<i class="fab fa-linkedin-in fa-4x"> </i>
+			</a>
+		</li>
+
+	</ul>
+</div>
+<div class="footer-copyright text-center py-3">
+		Copyright © syedazim 2020
+	</div>
+
+</footer>
+</body>
+</html>

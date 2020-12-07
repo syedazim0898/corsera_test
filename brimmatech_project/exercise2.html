@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>	Crescent Hostel</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="style.css">
+
+	<script src="https://kit.fontawesome.com/fe48c47a95.js" crossorigin="anonymous"></script>
+	<style>
+			li{cursor: pointer}
+			.container {
+				padding:20px;
+				width:600px;
+				font-family:arial;
+
+			}
+
+			header{
+				font-family:arial;
+			}
+	</style>
+
+</head>
+<body>
+	<nav>
+		<label class="logo">
+			<img style=""src="images\logo2.png" alt="logo">
+			Crescent Hostel
+		</label>
+		<ul>
+			<li><a  href="index.html">Home</a></li>
+			<li><a class="active" href="exercise2.html">About us</a></li>
+			<li><a href="exercise3.html">booking</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Feedback</a></li>
+
+		</ul>
+	</nav>
+
+	<!-- start -->
+	<div class="container "  style="border: 2px solid #3366cc ; border-radius:20px; background-color:white;   ">
+			<div class="page-header text-center   ">
+				<h2>linked list simulation</h2>
+			</div>
+			<br>
+			<br>
+
+			 <div>
+				 <div class="col-md-5">
+				 <input type="text" id="txt">
+			 </div>
+			 <div class="col-md-5">
+				 <button type="button" class="btn btn-success" onclick="addLI()" >Add</button>
+				 <button type="button" class="btn btn-info" onclick="editLI()">Edit</button>
+				 <button type="button" class="btn btn-danger" onclick="deleteLI()">Delete</button>
+			 </div>
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-8" style=text-align: center; >
+	<ul id="list">
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>Javascript</li>
+			<li>PHP</li>
+	</ul>
+</div>
+
+
+
+
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+	        <script>
+
+	            var inputText = document.getElementById("txt"),
+	                 items = document.querySelectorAll("#list li"),
+	                 tab = [], index;
+
+	             // get the selected li index using array
+	             // populate array with li values
+
+	             for(var i = 0; i < items.length; i++){
+	                 tab.push(items[i].innerHTML);
+	             }
+
+	             // get li index onclick
+	             for(var i = 0; i < items.length; i++){
+
+	                 items[i].onclick = function(){
+	                     index = tab.indexOf(this.innerHTML);
+	                     console.log(this.innerHTML + " INDEX = " + index);
+	                     // set the selected li value into input text
+	                     inputText.value = this.innerHTML;
+	                 };
+
+	             }
+
+	            function refreshArray()
+	            {
+	                // clear array
+	                tab.length = 0;
+	                items = document.querySelectorAll("#list li");
+	                // fill array
+	                for(var i = 0; i < items.length; i++){
+	                 tab.push(items[i].innerHTML);
+	               }
+	            }
+	            function addLI(){
+
+	                var listNode = document.getElementById("list"),
+	                    textNode = document.createTextNode(inputText.value),
+	                    liNode = document.createElement("LI");
+
+	                    liNode.appendChild(textNode);
+	                    listNode.appendChild(liNode);
+
+	                    refreshArray();
+
+	                    // add event to the new LI
+
+	                    liNode.onclick = function(){
+	                     index = tab.indexOf(liNode.innerHTML);
+	                     console.log(liNode.innerHTML + " INDEX = " + index);
+	                     // set the selected li value into input text
+	                     inputText.value = liNode.innerHTML;
+	                 };
+
+	             }
+
+	             function editLI(){
+	                 // edit the selected li using input text
+	                 items[index].innerHTML = inputText.value;
+	                 refreshArray();
+	              }
+
+	              function deleteLI(){
+
+	                      refreshArray();
+	                      if(items.length > 0){
+	                          items[index].parentNode.removeChild(items[index]);
+	                          inputText.value = "";
+	                      }
+	              }
+
+	        </script>
+
+
+
+	<!-- end -->
+
+
+
+
+	<footer class="page-footer font-large special-color-dark pt-4">
+
+<div class="container">
+
+	<ul class="list-unstyled list-inline text-center">
+		<li class="list-inline-item">
+			<a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/kba.menshostel">
+				<i class="fab fa-facebook-f fa-4x"> </i>
+			</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn-floating btn-tw mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology">
+				<i class="fab fa-twitter fa-4x"> </i>
+			</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn-floating btn-gplus mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology" >
+
+				<i class="fab fa-google-plus-g fa-4x"> </i>
+			</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/school/b.s.-abdur-rahman-institute-of-science-&-technology">
+				<i class="fab fa-linkedin-in fa-4x"> </i>
+			</a>
+		</li>
+
+	</ul>
+</div>
+<div class="footer-copyright text-center py-3">
+		Copyright © syedazim 2020
+	</div>
+
+</footer>
+</body>
+</html>
